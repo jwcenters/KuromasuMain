@@ -48,7 +48,9 @@ namespace Kuromasu
                     {
                         if (population[n].grid[i, j].getGrey(population[n].grid[i, j]) == true)
                         {
+                            population[n].grid[i, j].setBlack(population[n].grid[i, j], false);
                             population[n].grid[i, j].setWhite(population[n].grid[i, j], true);
+                            population[n].grid[i, j].setGrey(population[n].grid[i, j], false);
                         }
                     }
                 }

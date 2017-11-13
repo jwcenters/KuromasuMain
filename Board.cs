@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
- 
+
 namespace Kuromasu
 {
-    public class Board  
+    public class Board 
     {
-          
+        
         public Cell[,] grid;
         int rows = 0;
         int columns = 0;

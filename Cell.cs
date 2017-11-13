@@ -197,8 +197,8 @@ namespace Kuromasu
         public Cell setWhite(Cell cell, bool White)
         {
             cell.isWhiteCell = White;
-            cell.isBlackCell = false;
-            cell.isGreyCell = false;
+            //cell.isBlackCell = false;
+            //cell.isGreyCell = false;
             return cell;
         }
         public Cell setBlack(Cell cell, bool Black)
