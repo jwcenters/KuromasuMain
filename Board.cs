@@ -10,7 +10,7 @@ using System.Windows.Forms;
  
 namespace Kuromasu
 {
-    public class Board 
+    public class Board  
     {
           
         public Cell[,] grid;
