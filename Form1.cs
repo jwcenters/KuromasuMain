@@ -48,9 +48,11 @@ namespace Kuromasu
       {
         for (int j = 0; j < 7500; j++)
         {
-          population[j].fitness = alg.getFitness(population[i]);
+          population[j] = rand.Next(100) == 1 ? alg.mutation(population[j]) : population[j];
+          population[j].fitness = alg.getFitness(population[j]);
           //board.DrawBoard(population[j]);
         }
+        
         population = population.OrderBy(b => b.fitness).ToList();
         if(bestBoard == null || bestBoard.fitness > population[0].fitness)
         {
@@ -58,8 +60,11 @@ namespace Kuromasu
           board.DrawBoard(bestBoard);
           board.makeBoardOutline();
         }
-        alg.mutation(population[i]);
-        alg.crossOver(population[rand.Next(7500)/2], population[rand.Next(7500)/2]);
+        for (int k = 7499; k > 3750; k--)
+        {
+          
+          population[k] = alg.crossOver(population[rand.Next(7500) / 2], population[rand.Next(7500) / 2]);
+        }
       }
       WoC woc = new WoC();
       board = woc.findCommon(population);

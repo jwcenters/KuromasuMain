@@ -29,8 +29,8 @@ namespace Kuromasu
       {
         population[i] = new Board(board);
         population[i] = placeBlack(population[i], mult);
-        population[i].DrawBoard(population[i]);
-        population[i].makeBoardOutline();
+        //population[i].DrawBoard(population[i]);
+        //population[i].makeBoardOutline();
 
         
       }
