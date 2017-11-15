@@ -28,11 +28,11 @@ namespace Kuromasu
       for (int i = 0; i < 7500; i++)
       {
         population[i] = new Board(board);
+        population[i] = placeBlack(population[i], mult);
+        population[i].DrawBoard(population[i]);
+        population[i].makeBoardOutline();
 
-      }
-      for (int i = 0; i < 7500; i++)
-      {
-        population[i] = placeBlack(population[i], mult); //Randomize the cells to black
+        
       }
       //Go through and set all remaining grey cells to white
       for (int n = 0; n < 7500; n++)
@@ -201,7 +201,7 @@ namespace Kuromasu
           {
             //board.DrawBoard(board);
             //board.makeBoardOutline();
-            singleCellFitness = checkDown(board, i, j) + checkLeft(board, i, j) + checkRight(board, i, j) + checkUp(board, i, j);
+            singleCellFitness = checkDown(board, i, j) + checkLeft(board, i, j) + checkRight(board, i, j) + checkUp(board, i, j) + 1;
             fitness += Math.Abs(singleCellFitness - (double)board.grid[i, j].getNumber(board.grid[i, j]));
           }
         }
@@ -237,7 +237,7 @@ namespace Kuromasu
     {
       double count = 0;
       j--;
-      while (j > 0 && board.grid[i, j].checkWhite(board.grid[i, j]) == true)
+      while (j >= 0 && board.grid[i, j].checkWhite(board.grid[i, j]) == true)
       {
         count++;
         j--;
@@ -249,7 +249,7 @@ namespace Kuromasu
     {
       double count = 0;
       i--;
-      while (i > 0 && board.grid[i, j].checkWhite(board.grid[i, j]) == true)
+      while (i >= 0 && board.grid[i, j].checkWhite(board.grid[i, j]) == true)
       {
         count++;
         i--;

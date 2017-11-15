@@ -55,6 +55,8 @@ namespace Kuromasu
         if(bestBoard == null || bestBoard.fitness > population[0].fitness)
         {
           bestBoard = new Board(population[0]);
+          board.DrawBoard(bestBoard);
+          board.makeBoardOutline();
         }
         alg.mutation(population[i]);
         alg.crossOver(population[rand.Next(7500)/2], population[rand.Next(7500)/2]);
