@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace Kuromasu
 {
+    //Class used to store data 
     public class Cell
     {
         int x;
@@ -30,57 +31,26 @@ namespace Kuromasu
             isBlackCell = isBlack;
             isNumberedCell = isNum;
             number = num;
-            //width = Width;
-            //height = Height;
-        }
-        
-    public Cell(Cell c)
-    {
-      this.x = c.x;
-      this.y = c.y;
-      this.width = c.width;
-      this.height = c.height;
-      this.number = c.number;
-      this.isWhiteCell = c.isWhiteCell;
-      this.isNumberedCell = c.isNumberedCell;
-      this.isBlackCell = c.isBlackCell;
-      this.isGreyCell = c.isGreyCell;
-    }
-        
-
-        public Cell makeWhite(Cell cell)
-        {
-            //Rectangle rect = new Rectangle(cell.x, cell.y, cell.width - 5, cell.height - 5);
-            //graphics.FillRectangle(Brushes.White, rect);
-            cell.isBlackCell = false;
-            cell.isGreyCell = false;
-            cell.isWhiteCell = true;
-            return cell;
         }
 
-        public Cell makeGrey(Cell cell)
+        //Copying constructor
+        public Cell(Cell c)
         {
-            //Rectangle rect = new Rectangle(cell.x, cell.y, cell.width - 5, cell.height - 5);
-            //graphics.FillRectangle(Brushes.LightGray, rect);
-            cell.isBlackCell = false;
-            cell.isGreyCell = true;
-            cell.isWhiteCell = false;
-            return cell;
+            this.x = c.x;
+            this.y = c.y;
+            this.width = c.width;
+            this.height = c.height;
+            this.number = c.number;
+            this.isWhiteCell = c.isWhiteCell;
+            this.isNumberedCell = c.isNumberedCell;
+            this.isBlackCell = c.isBlackCell;
+            this.isGreyCell = c.isGreyCell;
         }
-        /*
-        public void makeBlack(Cell cell)
-        {
-            //Rectangle rect = new Rectangle(cell.x, cell.y, cell.width - 3, cell.height - 3);
-            //graphics.FillRectangle(Brushes.Black, rect);
-            cell.isBlackCell = true;
-            cell.isGreyCell = false;
-            cell.isWhiteCell = false;
-            //return cell;
-        }
-        */
+       
+        //Used to draw individual cells for single cell manipulation
         public void drawCell(Cell cell, Graphics graphics)
         {
-
+            //Create font for each numbered cell
             FontFamily fontFamily = new FontFamily("Arial");
             Font font = new Font(
                fontFamily,
@@ -90,6 +60,7 @@ namespace Kuromasu
             System.Drawing.SolidBrush brush;
             brush = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
             Rectangle rect = new Rectangle(cell.x, cell.y, cell.width, cell.height);
+            //Goes through and check each cells color and colors accordingly
             if (cell.isNumberedCell == true)
             {
                 graphics.FillRectangle(Brushes.White, rect);
@@ -110,6 +81,7 @@ namespace Kuromasu
             
         }
 
+        //Returns if the cell is white or not
         public bool checkWhite(Cell cell)
         {
             if (cell.isWhiteCell == true)
@@ -122,6 +94,7 @@ namespace Kuromasu
             }
         }
 
+        //Returns if the cell is black or not
         public bool checkBlack(Cell cell)
         {
             if (cell.isBlackCell == true)
@@ -134,6 +107,7 @@ namespace Kuromasu
             }
         }
 
+        //Returns if the cell is numbered or not
         public bool checkNumbered(Cell cell)
         {
             if (cell.isNumberedCell == true)
@@ -145,16 +119,7 @@ namespace Kuromasu
                 return false;
             }
         }
-
-        public int getX(Cell cell)
-        {
-            return cell.x;
-        }
-
-        public int getY(Cell cell)
-        {
-            return cell.y;
-        }
+        
         public bool getWhite(Cell cell)
         {
             return cell.isWhiteCell;
@@ -166,6 +131,11 @@ namespace Kuromasu
         public bool getGrey(Cell cell)
         {
             return cell.isGreyCell;
+        }
+
+        public int getNumber(Cell cell)
+        {
+            return Int32.Parse(cell.number);
         }
 
         public bool getNum(Cell cell)
@@ -197,8 +167,6 @@ namespace Kuromasu
         public Cell setWhite(Cell cell, bool White)
         {
             cell.isWhiteCell = White;
-            //cell.isBlackCell = false;
-            //cell.isGreyCell = false;
             return cell;
         }
         public Cell setBlack(Cell cell, bool Black)

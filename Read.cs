@@ -9,12 +9,12 @@ using System.IO;
 
 namespace Kuromasu
 {
+    //Used to read from a text file to create board
     public class Read
     {
-
-        string line; //Line is used to temporarily store a line from the tsp file
+        string line; //Line is used to temporarily store a line from the txt file
         string path;
-        int n = 0; //Used to keep number of lines that is within the file
+        //int n = 0; //Used to keep number of lines that is within the file
         int compare = 0;
         bool isGray;
         Cell[,] grid = new Cell[7, 7];
@@ -31,16 +31,17 @@ namespace Kuromasu
             //Open and read the file
             var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
             var streamReader = new StreamReader(fileStream, Encoding.UTF8);
-            int i = 0;
-            int j = 0;
+            int i = 0; //Row variable for grid
+            int j = 0; //Column variable for grid
 
-            //Find the first city in the file by checking the index number  
+            //Loop through the file and store data within cell class
+            //If the number is a 0, then it is an unknown cell
             while ((line = streamReader.ReadLine()) != null)
             {
                 int k = 0;
                 for (int n = 0; n < 7; n++)
                 {
-                    string num = line.Substring(k,1);
+                    string num = line.Substring(k,1); //Increment k through the string until end of string
                     compare = Int32.Parse(num);
                     if (compare != 0)
                     {
@@ -50,7 +51,7 @@ namespace Kuromasu
                     {
                         grid[i, n] = new Cell(width, height, false, true, false, false, "0");
                     }
-                    k = k+2;
+                    k = k+2; //Accounts for the space
                 }
                 i++;
             }

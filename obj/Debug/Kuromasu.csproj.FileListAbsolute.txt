@@ -1,0 +1,27 @@
+c:\users\sparrow\documents\visual studio 2017\Projects\Kuromasu\bin\Debug\Kuromasu.exe.config
+c:\users\sparrow\documents\visual studio 2017\Projects\Kuromasu\bin\Debug\Kuromasu.exe
+c:\users\sparrow\documents\visual studio 2017\Projects\Kuromasu\bin\Debug\Kuromasu.pdb
+c:\users\sparrow\documents\visual studio 2017\Projects\Kuromasu\obj\Debug\Kuromasu.csprojResolveAssemblyReference.cache
+c:\users\sparrow\documents\visual studio 2017\Projects\Kuromasu\obj\Debug\Kuromasu.Form1.resources
+c:\users\sparrow\documents\visual studio 2017\Projects\Kuromasu\obj\Debug\Kuromasu.Properties.Resources.resources
+c:\users\sparrow\documents\visual studio 2017\Projects\Kuromasu\obj\Debug\Kuromasu.csproj.GenerateResource.Cache
+c:\users\sparrow\documents\visual studio 2017\Projects\Kuromasu\obj\Debug\Kuromasu.exe
+c:\users\sparrow\documents\visual studio 2017\Projects\Kuromasu\obj\Debug\Kuromasu.pdb
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu\bin\Debug\Kuromasu.exe.config
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu\obj\Debug\Kuromasu.exe
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu\obj\Debug\Kuromasu.pdb
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu\bin\Debug\Kuromasu.exe
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu\bin\Debug\Kuromasu.pdb
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu\obj\Debug\Kuromasu.csprojResolveAssemblyReference.cache
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu\obj\Debug\Kuromasu.Form1.resources
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu\obj\Debug\Kuromasu.Properties.Resources.resources
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu\obj\Debug\Kuromasu.csproj.GenerateResource.Cache
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu-20171114T013723Z-001\Kuromasu\bin\Debug\Kuromasu.exe.config
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu-20171114T013723Z-001\Kuromasu\obj\Debug\Kuromasu.exe
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu-20171114T013723Z-001\Kuromasu\obj\Debug\Kuromasu.pdb
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu-20171114T013723Z-001\Kuromasu\bin\Debug\Kuromasu.exe
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu-20171114T013723Z-001\Kuromasu\bin\Debug\Kuromasu.pdb
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu-20171114T013723Z-001\Kuromasu\obj\Debug\Kuromasu.csprojResolveAssemblyReference.cache
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu-20171114T013723Z-001\Kuromasu\obj\Debug\Kuromasu.Form1.resources
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu-20171114T013723Z-001\Kuromasu\obj\Debug\Kuromasu.Properties.Resources.resources
+C:\Users\centersjw\OneDrive\school\cecs 545\Kuromasu-20171114T013723Z-001\Kuromasu\obj\Debug\Kuromasu.csproj.GenerateResource.Cache
