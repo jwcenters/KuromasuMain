@@ -49,7 +49,9 @@ namespace Kuromasu
             }
           }
         }
+        population[n].fitness = getFitness(population[n]);
       }
+
       //Population is randomized black cells that does not violate the rules of numbered cells being white
       return population.ToList<Board>();
     }
@@ -83,17 +85,35 @@ namespace Kuromasu
     //Cross over function to combine two boards
     public Board crossOver(Board board1, Board board2)
     {
-      Board child = board1;
-      int half = (int)child.getNumRows() / 2;
-      while (half + 1 < board1.getNumRows())
+      Random rand = new Random();
+      if (rand.Next(2) == 1)
       {
-        for (int i = 0; i < board1.getNumColumns(); i++)
+        Board child = board1;
+        int half = (int)child.getNumRows() / 2;
+        while (half + 1 < board1.getNumRows())
         {
-          child.grid[half, i] = board2.grid[half, i];
+          for (int i = 0; i < board1.getNumColumns(); i++)
+          {
+            child.grid[half, i] = new Cell(board2.grid[half, i]);
+          }
+          half++;
         }
-        half++;
+        return child;
       }
-      return child;
+      else
+      {
+        Board child = board2;
+        int half = (int)child.getNumRows() / 2;
+        while (half + 1 < board2.getNumRows())
+        {
+          for (int i = 0; i < board2.getNumColumns(); i++)
+          {
+            child.grid[half, i] = new Cell(board1.grid[half, i]);
+          }
+          half++;
+        }
+        return child;
+      }
     }
 
     //Mutation that removes a violated adjacent black cells and creates a black cell that does not violate the rule

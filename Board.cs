@@ -27,7 +27,7 @@ namespace Kuromasu
       columns = Columns;
       graphics = Graphics;
       grid = Grid;
-      this.fitness = getFitness(this);
+      //this.fitness = getFitness(this);
     }
 
     //Copying constructor
@@ -37,7 +37,7 @@ namespace Kuromasu
       this.columns = b.columns;
       this.width = b.width;
       this.graphics = b.graphics;
-      this.fitness = b.fitness;
+      this.fitness = getFitness(b);
       this.grid = new Cell[b.rows, b.columns];
       for (int i = 0; i < b.rows; i++)
       {
@@ -133,29 +133,30 @@ namespace Kuromasu
     public double getFitness(Board board)
     {
       double fitness = 0;
+      double singleCellFitness;
       for (int j = 0; j < board.getNumRows(); j++)
       {
         for (int i = 0; i < board.getNumColumns(); i++)
         {
           if (board.grid[i, j].isNumberedCell == true)
           {
-            fitness = checkDown(board, i, j) + checkLeft(board, i, j) + checkRight(board, i, j) + checkUp(board, i, j);
-            fitness = fitness - (double)board.grid[i, j].getNumber(board.grid[i, j]);
+            //board.DrawBoard(board);
+            //board.makeBoardOutline();
+            singleCellFitness = checkDown(board, i, j) + checkLeft(board, i, j) + checkRight(board, i, j) + checkUp(board, i, j) + 1;
+            fitness += Math.Abs(singleCellFitness - (double)board.grid[i, j].getNumber(board.grid[i, j]));
           }
         }
       }
       return fitness;
     }
+
     public double checkRight(Board board, int i, int j)
     {
       double count = 0;
       j++;
-      while (j < board.getNumColumns())
+      while (j < board.getNumColumns() && board.grid[i, j].checkWhite(board.grid[i, j]) == true)
       {
-        if (board.grid[i, j].checkWhite(board.grid[i, j]) == true)
-        {
-          count++;
-        }
+        count++;
         j++;
       }
       return count;
@@ -165,12 +166,9 @@ namespace Kuromasu
     {
       double count = 0;
       i++;
-      while (i < board.getNumRows())
+      while (i < board.getNumRows() && board.grid[i, j].checkWhite(board.grid[i, j]) == true)
       {
-        if (board.grid[i, j].checkWhite(board.grid[i, j]) == true)
-        {
-          count++;
-        }
+        count++;
         i++;
       }
       return count;
@@ -180,12 +178,9 @@ namespace Kuromasu
     {
       double count = 0;
       j--;
-      while (j > 0)
+      while (j >= 0 && board.grid[i, j].checkWhite(board.grid[i, j]) == true)
       {
-        if (board.grid[i, j].checkWhite(board.grid[i, j]) == true)
-        {
-          count++;
-        }
+        count++;
         j--;
       }
       return count;
@@ -195,18 +190,12 @@ namespace Kuromasu
     {
       double count = 0;
       i--;
-      while (i > 0)
+      while (i >= 0 && board.grid[i, j].checkWhite(board.grid[i, j]) == true)
       {
-        if (board.grid[i, j].checkWhite(board.grid[i, j]) == true)
-        {
-          count++;
-        }
+        count++;
         i--;
       }
       return count;
     }
-
-
   }
-
 }
